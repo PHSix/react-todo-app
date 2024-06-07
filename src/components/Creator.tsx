@@ -35,9 +35,9 @@ export default function Creator(props: Props) {
 
   return (
     <>
-      <div className="p-4 border-[1px] round cursor-pointer w-full flex gap-4 flex-row">
+      <div className="p-4 border-[1px] rounded cursor-pointer w-full flex gap-4 flex-row" onClick={onOpen}>
         <Checkbox checked={false}></Checkbox>
-        <div onClick={onOpen}>Create a new todo</div>
+        <div>Create a new todo</div>
       </div>
       <Modal isOpen={isOpen} onClose={onClose}>
 
