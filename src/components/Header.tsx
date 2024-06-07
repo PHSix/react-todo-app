@@ -1,10 +1,18 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import { useColorMode } from '@chakra-ui/react'
 import sunSvg from '@/assets/sun.svg'
 import moonSvg from '@/assets/moon.svg'
 
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode()
+
+  useEffect(() => {
+    if (colorMode === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [colorMode])
 
   function toggle() {
     toggleColorMode()
