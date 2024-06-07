@@ -11,7 +11,12 @@ interface Props {
  */
 export default function Creator(props: Props) {
   const [content, setContent] = useState('')
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose: _onClose } = useDisclosure()
+
+  function onClose() {
+    setContent('')
+    _onClose()
+  }
 
   function submit() {
     const createdTime = Date.now()
